@@ -32,12 +32,12 @@ class ProductoController extends Controller
             'descripcion' => 'required',
             'precio' => 'required|numeric',
             'stock' => 'required|integer',
-            'categoria_id' => 'required|exists:categorias,id' // Verifica que la categoría exista
+            'categoria_id' => 'required|exists:categorias,id' 
         ]);
 
         $producto = Producto::create($request->all());
 
-        return response()->json($producto, 201); // 201 significa "created"
+        return response()->json($producto, 201); 
     }
 
     /**
@@ -60,7 +60,7 @@ class ProductoController extends Controller
             'descripcion' => 'required',
             'precio' => 'required|numeric',
             'stock' => 'required|integer',
-            'categoria_id' => 'required|exists:categorias,id' // Verifica que la categoría exista
+            'categoria_id' => 'required|exists:categorias,id' 
         ]);
 
         $producto->update($request->all());
