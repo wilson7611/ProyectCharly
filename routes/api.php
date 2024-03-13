@@ -3,6 +3,8 @@
 use App\Http\Controllers\BonificacionController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ComprasController;
+use App\Http\Controllers\DetalleCompraController;
 use App\Http\Controllers\DetalleVentaController;
 use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\MovientoContableController;
@@ -31,6 +33,8 @@ Route::apiResource('ventas', VentaController::class);
 Route::apiResource('detalle-ventas', DetalleVentaController::class);
 Route::apiResource('ingresos', IngresoController::class);
 Route::apiResource('bonificaciones', BonificacionController::class);
+Route::apiResource('compras', ComprasController::class);
+Route::apiResource('detalle-compras', DetalleCompraController::class);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
