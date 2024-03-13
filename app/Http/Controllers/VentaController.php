@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\User;
-use App\Models\venta\Venta;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 
 class VentaController extends Controller

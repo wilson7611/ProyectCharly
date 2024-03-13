@@ -3,7 +3,7 @@
 namespace App\Models\detalleCompra;
 
 use App\Models\compras\Compras;
-use App\Models\producto\Producto;
+use App\Models\Producto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

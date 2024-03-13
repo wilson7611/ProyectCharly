@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\compras\Compras;
 use App\Models\detalleCompra\DetalleCompra;
-use App\Models\producto\Producto;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class DetalleCompraController extends Controller

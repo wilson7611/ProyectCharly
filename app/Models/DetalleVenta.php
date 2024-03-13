@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Models\detaleVenta;
-
-use App\Models\producto\Producto;
-use App\Models\venta\Venta;
+namespace App\Models;
+use App\Models\Producto;
+use App\Models\Venta;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

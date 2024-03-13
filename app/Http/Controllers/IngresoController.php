@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ingreso\Ingreso;
 use App\Models\MovientoContable;
-use App\Models\venta\Venta;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 
 class IngresoController extends Controller

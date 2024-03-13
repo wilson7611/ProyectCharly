@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
             $table->string('fecha_compra');
-            $table->foreignId('categoria_id')
+            $table->foreignId('proveedor_id')
                 ->references('id')
-                ->on('categorias')
+                ->on('proveedors')
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

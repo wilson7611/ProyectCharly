@@ -3,7 +3,7 @@
 namespace App\Models\ingreso;
 
 use App\Models\MovientoContable;
-use App\Models\venta\Venta;
+use App\Models\Venta;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

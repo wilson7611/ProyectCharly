@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\detaleVenta\DetalleVenta;
-use App\Models\producto\Producto;
-use App\Models\venta\Venta;
+use App\Models\DetalleVenta;
+use App\Models\Producto;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 
 class DetalleVentaController extends Controller

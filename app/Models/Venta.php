@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Models\venta;
-
+namespace App\Models;
 use App\Models\Cliente;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
