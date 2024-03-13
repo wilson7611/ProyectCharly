@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('bonificacions', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->text('descripcion');
+            $table->decimal('descuento', 10, 2);
+            $table->unsignedBigInteger('cliente_id');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

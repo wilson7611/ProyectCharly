@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BonificacionController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DetalleVentaController;
@@ -29,6 +30,7 @@ Route::apiResource('productos', ProductoController::class);
 Route::apiResource('ventas', VentaController::class);
 Route::apiResource('detalle-ventas', DetalleVentaController::class);
 Route::apiResource('ingresos', IngresoController::class);
+Route::apiResource('bonificaciones', BonificacionController::class);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

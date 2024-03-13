@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\bonificacion\Bonificacion;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class BonificacionController extends Controller
@@ -12,7 +13,9 @@ class BonificacionController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = Cliente::all();
+
+        return response()->json($clientes);
     }
 
     /**
@@ -20,7 +23,16 @@ class BonificacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required|max:100',
+            'descuento' => 'required|numeric',
+            'cliente_id' => 'required|exists:clientes,id'
+        ]);
+
+        $cliente = Cliente::create($request->all());
+
+        return response()->json($cliente, 201);
     }
 
     /**
@@ -28,7 +40,9 @@ class BonificacionController extends Controller
      */
     public function show(Bonificacion $bonificacion)
     {
-        //
+        $bonificacion->load('clientes');
+
+        return response()->json($bonificacion);
     }
 
     /**
@@ -36,7 +50,16 @@ class BonificacionController extends Controller
      */
     public function update(Request $request, Bonificacion $bonificacion)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required|max:100',
+            'descuento' => 'required|numeric',
+            'cliente_id' => 'required|exists:clientes,id'
+        ]);
+
+        $bonificacion->update($request->all());
+
+        return response()->json($bonificacion, 200);
     }
 
     /**
@@ -44,6 +67,8 @@ class BonificacionController extends Controller
      */
     public function destroy(Bonificacion $bonificacion)
     {
-        //
+        $bonificacion->delete();
+
+        return response()->json(null, 204);
     }
 }
