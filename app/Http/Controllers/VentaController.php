@@ -48,7 +48,9 @@ class VentaController extends Controller
      */
     public function show(Venta $venta)
     {
-        //
+        $venta->load(['clientes', 'vendedores']);
+
+        return response()->json($venta);
     }
 
     /**
@@ -56,7 +58,16 @@ class VentaController extends Controller
      */
     public function update(Request $request, Venta $venta)
     {
-        //
+        $request->validate([
+            'fecha_venta' => 'required|date',
+            'total' => 'required|numeric',
+            'cliente_id' => 'required|exists:clientes,id',
+            'vendedor_id' => 'required|exists:users,id'
+        ]);
+
+        $venta->update($request->all());
+
+        return response()->json($venta, 201);
     }
 
     /**
@@ -64,6 +75,8 @@ class VentaController extends Controller
      */
     public function destroy(Venta $venta)
     {
-        //
+        $venta->delete();
+
+        return response()->json(null, 204);
     }
 }
