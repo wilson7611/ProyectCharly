@@ -13,13 +13,15 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $producto = Producto::all();
-        $categoria = Categoria::all();
+        $productos = Producto::all();
+        $categorias = Categoria::all();
 
-        return response()->json([
-            'productos' => $producto,
-            'categorias' => $categoria
-        ]);
+        // return response()->json([
+        //     'productos' => $producto,
+        //     'categorias' => $categoria
+        // ]);
+        return view('productos.index', compact('productos', 'categorias'));
+        
     }
 
     /**

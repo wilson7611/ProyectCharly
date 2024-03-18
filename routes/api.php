@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BonificacionController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
@@ -25,6 +26,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+// Route::get('/', function () {
+//     return view('auth/login');
+// });
+
+
 Route::apiResource('categorias', CategoriaController::class);
 Route::apiResource('clientes', ClienteController::class);
 Route::apiResource('proveedores', ProveedorController::class);
