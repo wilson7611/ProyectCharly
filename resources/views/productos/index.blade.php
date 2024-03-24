@@ -11,6 +11,7 @@
                 <table id="buttons-datatables" class="display table table-bordered" style="width:100%">
                     <thead>
                         <tr>
+                            <th>Imagen</th>
                             <th>Nombre</th>
                             <th>Descripcion</th>
                             <th>Precio</th>
@@ -19,13 +20,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($productos as $producto) 
+                        @foreach ($productos as $producto)
                         <tr>
-                            <td>{{ $producto->nombre }}</td> 
-                            <td>{{ $producto->descripcion }}</td> 
-                            <td>{{ $producto->precio }}</td> 
-                            <td>{{ $producto->stock }}</td> 
-                            <td>{{ $producto->categorias->nombre }}</td>     
+                            <td>{{ $producto->imagen }}</td>
+                            <td>{{ $producto->nombre }}</td>
+                            <td>{{ $producto->descripcion }}</td>
+                            <td>{{ $producto->precio }}</td>
+                            <td>{{ $producto->stock }}</td>
+                            <td>{{ $producto->categorias->nombre }}</td>
                         </tr>
                         @endforeach
                 </table>
