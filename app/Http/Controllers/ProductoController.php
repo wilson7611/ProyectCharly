@@ -18,16 +18,19 @@ class ProductoController extends Controller
         $categorias = Categoria::all();
 
         // return response()->json([
-        //     'productos' => $producto,
-        //     'categorias' => $categoria
+        //     'productos' => $productos,
+        //     'categorias' => $categorias
         // ]);
         return view('productos.index', compact('productos', 'categorias'));
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function create(Request $request)
+    {
+        $categorias = Categoria::all();
+        $producto = Producto::all(); 
+        return view('productos.create', compact('categorias', 'producto'));
+    }
     public function store(Request $request)
     {
         $request->validate([
@@ -56,7 +59,8 @@ class ProductoController extends Controller
         $producto = Producto::create($data);
 
         // Devolver una respuesta JSON con el producto creado
-        return response()->json($producto, 201);
+        // return response()->json($producto, 201);
+        return redirect()->route('productos.index');
     }
 
     /**
